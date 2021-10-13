@@ -1,0 +1,8 @@
+[byceps]
+api_host = "https://byceps.example"
+api_token = "your-secret-api-token"
+party_id = "acmeparty-2021"
+
+[discord]
+bot_token = "your-secret-bot-token"
+channel_id = "123456789012345678"
