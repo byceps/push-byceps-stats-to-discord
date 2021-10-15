@@ -1,0 +1,14 @@
+language: rust
+rust:
+  - stable
+cache: cargo
+script:
+  - cargo build --verbose
+notifications:
+  email: false
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - bash ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - bash ./send.sh failure $WEBHOOK_UR
