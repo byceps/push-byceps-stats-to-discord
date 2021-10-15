@@ -3,7 +3,7 @@ rust:
   - stable
 cache: cargo
 script:
-  - cargo build --verbose
+  - cargo build
 notifications:
   email: false
 after_success:
