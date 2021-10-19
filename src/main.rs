@@ -58,7 +58,7 @@ fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleStats> {
         "{}/api/v1/ticketing/sale_stats/{}",
         config.api_host, config.party_id
     );
-    let authz_value = format!("Bearer {}", base64::encode(config.api_token));
+    let authz_value = format!("Bearer {}", config.api_token);
 
     let request = ureq::get(&url).set("Authorization", &authz_value);
     let response = request.call()?;
