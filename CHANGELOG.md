@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.2.0 (unreleased)
+## Version 0.2.0 (2021-10-19)
 
 - Adjusted to BYCEPS API no longer expecting the token to be
   Base64-encoded.
