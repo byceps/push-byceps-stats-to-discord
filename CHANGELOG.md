@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Unreleased
+## Version 0.3.0 (2021-12-28)
 
 - Switched to Rust edition 2021.
 

@@ -1,6 +1,6 @@
 [package]
 name = "push-byceps-stats-to-discord"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Jochen Kupperschmidt"]
 edition = "2021"
 description = "Push BYCEPS ticket sale stats to Discord (as channel name)"
