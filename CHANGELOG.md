@@ -7,6 +7,8 @@
 
 - Upgraded clap to v2.34 (from v2.33.3).
 
+- Upgraded ureq to v2.4.0 (from v2.2.0).
+
 
 ## Version 0.2.0 (2021-10-19)
 

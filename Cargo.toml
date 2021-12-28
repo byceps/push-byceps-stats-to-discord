@@ -15,4 +15,4 @@ anyhow = "1.0"
 clap = { version = "2.34", default-features = false }
 serde = { version = "1", features = ["derive"] }
 toml = "0.5.8"
-ureq = { version = "2.2.0", features = ["json"] }
+ureq = { version = "2.4.0", features = ["json"] }
