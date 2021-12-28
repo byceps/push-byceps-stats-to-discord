@@ -5,6 +5,8 @@
 
 - Switched to Rust edition 2021.
 
+- Upgraded clap to v2.34 (from v2.33.3).
+
 
 ## Version 0.2.0 (2021-10-19)
 
