@@ -2,7 +2,7 @@
 name = "push-byceps-stats-to-discord"
 version = "0.2.0"
 authors = ["Jochen Kupperschmidt"]
-edition = "2018"
+edition = "2021"
 description = "Push BYCEPS ticket sale stats to Discord (as channel name)"
 readme = "README.md"
 repository = "https://github.com/byceps/push-byceps-stats-to-discord"

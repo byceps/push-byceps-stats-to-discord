@@ -1,6 +1,11 @@
 # Changelog
 
 
+## Unreleased
+
+- Switched to Rust edition 2021.
+
+
 ## Version 0.2.0 (2021-10-19)
 
 - Adjusted to BYCEPS API no longer expecting the token to be
