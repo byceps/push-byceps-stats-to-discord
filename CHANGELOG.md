@@ -9,6 +9,8 @@
 
 - Upgraded ureq to v2.4.0 (from v2.2.0).
 
+- Use `ureq::patch`.
+
 
 ## Version 0.2.0 (2021-10-19)
 
