@@ -8,9 +8,9 @@
 
 - Switched to Rust edition 2021.
 
-- Upgraded clap to v2.34 (from v2.33.3).
+- Updated clap to v2.34 (from v2.33.3).
 
-- Upgraded ureq to v2.4.0 (from v2.2.0).
+- Updated ureq to v2.4.0 (from v2.2.0).
 
 - Use `ureq::patch`.
 
