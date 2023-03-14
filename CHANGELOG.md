@@ -3,6 +3,8 @@
 
 ## Version 0.4.0 (unreleased)
 
+- Updated toml to v0.7.3 (from v0.5.8).
+
 
 ## Version 0.3.0 (2021-12-28)
 
