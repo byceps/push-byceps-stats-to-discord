@@ -3,30 +3,12 @@
  * License: MIT (see file `LICENSE` for details)
  */
 
+use crate::config::{load_config, BycepsConfig, DiscordConfig};
 use anyhow::Result;
 use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, ArgMatches};
 use serde::Deserialize;
-use std::fs::read_to_string;
 use std::path::Path;
-
-#[derive(Debug, Deserialize)]
-struct Config {
-    byceps: BycepsConfig,
-    discord: DiscordConfig,
-}
-
-#[derive(Debug, Deserialize)]
-struct BycepsConfig {
-    api_host: String,
-    api_token: String,
-    party_id: String,
-}
-
-#[derive(Debug, Deserialize)]
-struct DiscordConfig {
-    bot_token: String,
-    channel_id: String,
-}
+mod config;
 
 #[derive(Debug, Deserialize)]
 struct TicketSaleStats {
@@ -45,12 +27,6 @@ fn parse_args() -> ArgMatches<'static> {
                 .required(true),
         )
         .get_matches()
-}
-
-fn load_config(path: &Path) -> Result<Config> {
-    let text = read_to_string(path)?;
-    let config: Config = toml::from_str(&text)?;
-    Ok(config)
 }
 
 fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleStats> {
