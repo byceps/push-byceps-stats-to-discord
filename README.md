@@ -15,7 +15,7 @@ has to be configured and made available for the client.
 
 ## Usage
 
-Create a configuration file based off of `config-example.toml`.
+Create a configuration file based off of `config_example.toml`.
 
 Run the program, pointing to it:
 
