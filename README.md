@@ -20,7 +20,7 @@ Create a configuration file based off of `config_example.toml`.
 Run the program, pointing to it:
 
 ```sh
-$ push-byceps-stats-to-discord config.toml
+$ push-byceps-stats-to-discord --config config.toml
 ```
 
 
