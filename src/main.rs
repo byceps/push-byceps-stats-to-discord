@@ -5,28 +5,15 @@
 
 use crate::config::{load_config, BycepsConfig, DiscordConfig};
 use anyhow::Result;
-use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, ArgMatches};
 use serde::Deserialize;
 use std::path::Path;
+mod cli;
 mod config;
 
 #[derive(Debug, Deserialize)]
 struct TicketSaleStats {
     tickets_max: u16,
     tickets_sold: u16,
-}
-
-fn parse_args() -> ArgMatches<'static> {
-    App::new(crate_name!())
-        .author(crate_authors!())
-        .version(crate_version!())
-        .about(crate_description!())
-        .arg(
-            Arg::with_name("config")
-                .help("Specify configuration file")
-                .required(true),
-        )
-        .get_matches()
 }
 
 fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleStats> {
@@ -55,7 +42,7 @@ fn set_discord_channel_name(config: DiscordConfig, name: &str) -> Result<()> {
 }
 
 fn main() -> Result<()> {
-    let args = parse_args();
+    let args = cli::parse_args();
 
     let config_filename = args.value_of("config").map(Path::new).unwrap();
     let config = load_config(config_filename)?;
