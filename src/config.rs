@@ -3,13 +3,21 @@
  * License: MIT (see file `LICENSE` for details)
  */
 
+use crate::logging::get_default_log_level;
 use anyhow::Result;
+use log::Level;
 use serde::Deserialize;
+use serde_with::{serde_as, DisplayFromStr};
 use std::fs::read_to_string;
 use std::path::Path;
 
+#[serde_as]
 #[derive(Debug, Deserialize, PartialEq)]
 pub(crate) struct Config {
+    #[serde(default = "get_default_log_level")]
+    #[serde_as(as = "DisplayFromStr")]
+    pub(crate) log_level: Level,
+
     pub(crate) byceps: BycepsConfig,
     pub(crate) discord: DiscordConfig,
 }
@@ -41,6 +49,7 @@ mod tests {
     #[test]
     fn test_load_config() {
         let expected = Config {
+            log_level: Level::Error,
             byceps: BycepsConfig {
                 api_host: "https://byceps.example".to_owned(),
                 api_token: "your-secret-api-token".to_owned(),

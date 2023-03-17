@@ -5,6 +5,7 @@
 
 use crate::config::BycepsConfig;
 use anyhow::Result;
+use log::info;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
@@ -24,6 +25,10 @@ pub(crate) fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleSt
     let response = request.call()?;
 
     let stats = response.into_json::<TicketSaleStats>()?;
+    info!(
+        "Ticket stats: {} of {} sold",
+        stats.tickets_sold, stats.tickets_max
+    );
 
     Ok(stats)
 }

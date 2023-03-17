@@ -9,11 +9,14 @@ mod byceps;
 mod cli;
 mod config;
 mod discord;
+mod logging;
 
 fn main() -> Result<()> {
     let cli = cli::parse();
 
     let config = load_config(&cli.config_filename)?;
+
+    logging::configure(config.log_level);
 
     let stats = byceps::get_ticket_sale_stats(config.byceps)?;
 

@@ -1,3 +1,6 @@
+# Default: level "error"
+#log_level = "info"
+
 [byceps]
 api_host = "https://byceps.example"
 api_token = "your-secret-api-token"
