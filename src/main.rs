@@ -6,7 +6,6 @@
 use crate::config::{load_config, BycepsConfig, DiscordConfig};
 use anyhow::Result;
 use serde::Deserialize;
-use std::path::Path;
 mod cli;
 mod config;
 
@@ -42,10 +41,9 @@ fn set_discord_channel_name(config: DiscordConfig, name: &str) -> Result<()> {
 }
 
 fn main() -> Result<()> {
-    let args = cli::parse_args();
+    let cli = cli::parse();
 
-    let config_filename = args.value_of("config").map(Path::new).unwrap();
-    let config = load_config(config_filename)?;
+    let config = load_config(&cli.config_filename)?;
 
     let stats = get_ticket_sale_stats(config.byceps)?;
     let channel_name = format!(

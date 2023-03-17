@@ -3,6 +3,8 @@
 
 ## Version 0.4.0 (unreleased)
 
+- Updated clap to v4.1.9 (from v2.34).
+
 - Updated toml to v0.7.3 (from v0.5.8).
 
 - Updated ureq to v2.6.2 (from v2.4.0).

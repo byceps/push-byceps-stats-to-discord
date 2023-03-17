@@ -3,17 +3,18 @@
  * License: MIT (see file `LICENSE` for details)
  */
 
-use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, ArgMatches};
+use clap::Parser;
+use std::path::PathBuf;
 
-pub(crate) fn parse_args() -> ArgMatches<'static> {
-    App::new(crate_name!())
-        .author(crate_authors!())
-        .version(crate_version!())
-        .about(crate_description!())
-        .arg(
-            Arg::with_name("config")
-                .help("Specify configuration file")
-                .required(true),
-        )
-        .get_matches()
+/// Command-line arguments
+#[derive(Parser, Debug)]
+#[command(about, author, version)]
+pub(crate) struct Cli {
+    /// Configuration filename
+    #[arg(short = 'c', long = "config", value_name = "FILE")]
+    pub config_filename: PathBuf,
+}
+
+pub(crate) fn parse() -> Cli {
+    Cli::parse()
 }
