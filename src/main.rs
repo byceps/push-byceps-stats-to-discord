@@ -3,54 +3,25 @@
  * License: MIT (see file `LICENSE` for details)
  */
 
-use crate::config::{load_config, BycepsConfig, DiscordConfig};
+use crate::config::load_config;
 use anyhow::Result;
-use serde::Deserialize;
+mod byceps;
 mod cli;
 mod config;
-
-#[derive(Debug, Deserialize)]
-struct TicketSaleStats {
-    tickets_max: u16,
-    tickets_sold: u16,
-}
-
-fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleStats> {
-    let url = format!(
-        "{}/api/v1/ticketing/sale_stats/{}",
-        config.api_host, config.party_id
-    );
-    let authz_value = format!("Bearer {}", config.api_token);
-
-    let request = ureq::get(&url).set("Authorization", &authz_value);
-    let response = request.call()?;
-
-    let stats = response.into_json::<TicketSaleStats>()?;
-
-    Ok(stats)
-}
-
-fn set_discord_channel_name(config: DiscordConfig, name: &str) -> Result<()> {
-    let url = format!("https://discord.com/api/v9/channels/{}", config.channel_id);
-    let authz_value = format!("Bot {}", config.bot_token);
-
-    let request = ureq::patch(&url).set("Authorization", &authz_value);
-    request.send_json(ureq::json!({ "name": name }))?;
-
-    Ok(())
-}
+mod discord;
 
 fn main() -> Result<()> {
     let cli = cli::parse();
 
     let config = load_config(&cli.config_filename)?;
 
-    let stats = get_ticket_sale_stats(config.byceps)?;
+    let stats = byceps::get_ticket_sale_stats(config.byceps)?;
+
     let channel_name = format!(
         "Tickets sold: {} / {}",
         stats.tickets_sold, stats.tickets_max
     );
-    set_discord_channel_name(config.discord, &channel_name)?;
+    discord::set_channel_name(config.discord, &channel_name)?;
 
     Ok(())
 }
