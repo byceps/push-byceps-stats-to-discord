@@ -14,7 +14,7 @@ pub(crate) struct TicketSaleStats {
     pub tickets_sold: u16,
 }
 
-pub(crate) fn get_ticket_sale_stats(config: BycepsConfig) -> Result<TicketSaleStats> {
+pub(crate) fn get_ticket_sale_stats(config: &BycepsConfig) -> Result<TicketSaleStats> {
     let url = format!(
         "{}/api/v1/ticketing/sale_stats/{}",
         config.api_host, config.party_id

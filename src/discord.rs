@@ -8,7 +8,7 @@ use anyhow::Result;
 use log::error;
 use log::info;
 
-pub(crate) fn set_channel_name(config: DiscordConfig, name: &str) -> Result<()> {
+pub(crate) fn set_channel_name(config: &DiscordConfig, name: &str) -> Result<()> {
     let url = format!("https://discord.com/api/v9/channels/{}", config.channel_id);
     let authz_value = format!("Bot {}", config.bot_token);
 
@@ -18,7 +18,8 @@ pub(crate) fn set_channel_name(config: DiscordConfig, name: &str) -> Result<()> 
         Err(ureq::Error::Status(code, response)) => {
             error!(
                 "Discord channel name update failed: {} {}",
-                code, response.status_text()
+                code,
+                response.status_text()
             )
         }
         Err(_) => error!("Discord channel name update failed due to I/O or transport error."),

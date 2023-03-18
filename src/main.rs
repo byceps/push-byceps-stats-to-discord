@@ -3,7 +3,7 @@
  * License: MIT (see file `LICENSE` for details)
  */
 
-use crate::config::load_config;
+use crate::config::{load_config, BycepsConfig, Config, DiscordConfig};
 use anyhow::Result;
 mod byceps;
 mod cli;
@@ -18,13 +18,35 @@ fn main() -> Result<()> {
 
     logging::configure(config.log_level);
 
-    let stats = byceps::get_ticket_sale_stats(config.byceps)?;
+    let app = Application::new(config);
 
-    let channel_name = format!(
-        "Tickets sold: {} / {}",
-        stats.tickets_sold, stats.tickets_max
-    );
-    discord::set_channel_name(config.discord, &channel_name)?;
+    app.run()?;
 
     Ok(())
+}
+
+struct Application {
+    byceps_config: BycepsConfig,
+    discord_config: DiscordConfig,
+}
+
+impl Application {
+    fn new(config: Config) -> Self {
+        Self {
+            byceps_config: config.byceps,
+            discord_config: config.discord,
+        }
+    }
+
+    fn run(&self) -> Result<()> {
+        let stats = byceps::get_ticket_sale_stats(&self.byceps_config)?;
+
+        let channel_name = format!(
+            "Tickets sold: {} / {}",
+            stats.tickets_sold, stats.tickets_max
+        );
+        discord::set_channel_name(&self.discord_config, &channel_name)?;
+
+        Ok(())
+    }
 }
