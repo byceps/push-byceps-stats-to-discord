@@ -1,6 +1,9 @@
 # Changelog
 
 
+## Version 0.4.2 (unreleased)
+
+
 ## Version 0.4.1 (2023-03-18)
 
 - Fixed Docker build.
