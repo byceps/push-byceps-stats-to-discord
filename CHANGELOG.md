@@ -7,7 +7,7 @@
 
 - Implemented logging.
 
-- Added `Dockerfile`.
+- Added `Dockerfile` and Docker Compose file.
 
 - Updated clap to v4.1.9 (from v2.34).
 
