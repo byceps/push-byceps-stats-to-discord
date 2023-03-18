@@ -12,6 +12,9 @@ display.
 The API of the BYCEPS installation has to be enabled and an API token
 has to be configured and made available for the client.
 
+If an interval is configured, the tool runs contiuously; otherwise it
+exits after one channel update.
+
 
 ## Usage
 

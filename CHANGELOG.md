@@ -3,7 +3,9 @@
 
 ## Version 0.4.0 (unreleased)
 
-- Implement logging.
+- Implemented repeated fetching and submitting of ticket sale stats.
+
+- Implemented logging.
 
 - Updated clap to v4.1.9 (from v2.34).
 

@@ -7,9 +7,10 @@ use crate::logging::get_default_log_level;
 use anyhow::Result;
 use log::Level;
 use serde::Deserialize;
-use serde_with::{serde_as, DisplayFromStr};
+use serde_with::{serde_as, DisplayFromStr, DurationSeconds};
 use std::fs::read_to_string;
 use std::path::Path;
+use std::time::Duration;
 
 #[serde_as]
 #[derive(Debug, Deserialize, PartialEq)]
@@ -20,6 +21,10 @@ pub(crate) struct Config {
 
     pub(crate) byceps: BycepsConfig,
     pub(crate) discord: DiscordConfig,
+
+    #[serde(rename = "interval_in_seconds")]
+    #[serde_as(as = "Option<DurationSeconds<u64>>")]
+    pub(crate) interval: Option<Duration>,
 }
 
 #[derive(Debug, Deserialize, PartialEq)]
@@ -59,6 +64,7 @@ mod tests {
                 bot_token: "your-secret-bot-token".to_owned(),
                 channel_id: "123456789012345678".to_owned(),
             },
+            interval: None,
         };
 
         let actual = load_config(Path::new("config_example.toml"));

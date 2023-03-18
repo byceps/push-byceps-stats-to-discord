@@ -5,6 +5,9 @@
 
 use crate::config::{load_config, BycepsConfig, Config, DiscordConfig};
 use anyhow::Result;
+use log::info;
+use std::thread;
+use std::time::Duration;
 mod byceps;
 mod cli;
 mod config;
@@ -28,6 +31,7 @@ fn main() -> Result<()> {
 struct Application {
     byceps_config: BycepsConfig,
     discord_config: DiscordConfig,
+    interval: Option<Duration>,
 }
 
 impl Application {
@@ -35,10 +39,19 @@ impl Application {
         Self {
             byceps_config: config.byceps,
             discord_config: config.discord,
+            interval: config.interval,
         }
     }
 
     fn run(&self) -> Result<()> {
+        match self.interval {
+            Some(duration) => self.run_looped(duration)?,
+            None => self.run_once()?,
+        }
+        Ok(())
+    }
+
+    fn run_once(&self) -> Result<()> {
         let stats = byceps::get_ticket_sale_stats(&self.byceps_config)?;
 
         let channel_name = format!(
@@ -48,5 +61,14 @@ impl Application {
         discord::set_channel_name(&self.discord_config, &channel_name)?;
 
         Ok(())
+    }
+
+    fn run_looped(&self, interval: Duration) -> Result<()> {
+        info!("Interval: {} seconds", interval.as_secs());
+
+        loop {
+            self.run_once()?;
+            thread::sleep(interval);
+        }
     }
 }
