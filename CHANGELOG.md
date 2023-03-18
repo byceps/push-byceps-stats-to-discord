@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.4.2 (unreleased)
+## Version 0.4.2 (2023-03-18)
 
 - Fixed image path in Compose file.
 
