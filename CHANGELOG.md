@@ -7,6 +7,8 @@
 
 - Implemented logging.
 
+- Added `Dockerfile`.
+
 - Updated clap to v4.1.9 (from v2.34).
 
 - Updated toml to v0.7.3 (from v0.5.8).
