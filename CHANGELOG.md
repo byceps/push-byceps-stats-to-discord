@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.4.0 (unreleased)
+## Version 0.4.0 (2023-03-18)
 
 - Implemented repeated fetching and submitting of ticket sale stats.
 
