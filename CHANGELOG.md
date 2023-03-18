@@ -3,6 +3,8 @@
 
 ## Version 0.4.1 (unreleased)
 
+- Fixed Docker build.
+
 
 ## Version 0.4.0 (2023-03-18)
 

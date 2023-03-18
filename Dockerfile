@@ -7,7 +7,7 @@ RUN cargo init --bin
 COPY ./Cargo.lock ./Cargo.toml ./
 RUN cargo build --release && \
     rm ./src/main.rs && \
-    rm ./target/release/deps/push-byceps-stats-to-discord*
+    rm ./target/release/deps/push_byceps_stats_to_discord*
 
 # Add and compile actual source code.
 COPY ./src ./src
