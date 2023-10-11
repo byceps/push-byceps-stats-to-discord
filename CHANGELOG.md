@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.5.0 (unreleased)
+## Version 0.5.0 (2023-10-12)
 
 - Remove `/api` from beginning of URL path to BYCEPS API.
 
