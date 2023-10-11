@@ -9,6 +9,8 @@
 
 - Updated simple_logger to v4.2.0.
 
+- Updated toml to v0.8.2.
+
 
 ## Version 0.4.2 (2023-03-18)
 
