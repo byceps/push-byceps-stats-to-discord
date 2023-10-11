@@ -5,6 +5,10 @@
 
 - Updated clap to v4.4.6.
 
+- Updated log to v0.4.20.
+
+- Updated simple_logger to v4.2.0.
+
 
 ## Version 0.4.2 (2023-03-18)
 
