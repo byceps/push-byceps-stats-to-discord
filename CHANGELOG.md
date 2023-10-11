@@ -3,6 +3,8 @@
 
 ## Version 0.5.0 (unreleased)
 
+- Remove `/api` from beginning of URL path to BYCEPS API.
+
 - Updated clap to v4.4.6.
 
 - Updated log to v0.4.20.

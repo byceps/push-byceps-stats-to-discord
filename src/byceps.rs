@@ -16,7 +16,7 @@ pub(crate) struct TicketSaleStats {
 
 pub(crate) fn get_ticket_sale_stats(config: &BycepsConfig) -> Result<TicketSaleStats> {
     let url = format!(
-        "{}/api/v1/ticketing/sale_stats/{}",
+        "{}/v1/ticketing/sale_stats/{}",
         config.api_host, config.party_id
     );
     let authz_value = format!("Bearer {}", config.api_token);

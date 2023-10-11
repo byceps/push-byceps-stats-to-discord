@@ -6,7 +6,7 @@
 #interval_in_seconds = 120
 
 [byceps]
-api_host = "https://byceps.example"
+api_host = "https://api.byceps.example"
 api_token = "your-secret-api-token"
 party_id = "acmeparty-2021"
 
