@@ -6,6 +6,8 @@
 - Adjusted configuration test to changed value in exemplary
   configuration file.
 
+- Update Docker base images to Rust version 1.73.0.
+
 
 ## Version 0.5.0 (2023-10-12)
 
