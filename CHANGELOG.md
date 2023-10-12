@@ -3,6 +3,9 @@
 
 ## Version 0.5.1 (unreleased)
 
+- Adjusted configuration test to changed value in exemplary
+  configuration file.
+
 
 ## Version 0.5.0 (2023-10-12)
 

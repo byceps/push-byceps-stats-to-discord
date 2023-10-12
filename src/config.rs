@@ -56,7 +56,7 @@ mod tests {
         let expected = Config {
             log_level: Level::Error,
             byceps: BycepsConfig {
-                api_host: "https://byceps.example".to_owned(),
+                api_host: "https://api.byceps.example".to_owned(),
                 api_token: "your-secret-api-token".to_owned(),
                 party_id: "acmeparty-2021".to_owned(),
             },
