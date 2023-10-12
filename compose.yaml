@@ -1,6 +1,6 @@
 services:
   push-byceps-stats-to-discord:
-    image: ghcr.io/byceps/push-byceps-stats-to-discord:0.5.0
+    image: ghcr.io/byceps/push-byceps-stats-to-discord:0.5.1
     volumes:
       - ./config.toml:/config.toml:ro
     restart: unless-stopped
