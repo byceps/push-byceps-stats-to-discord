@@ -1,6 +1,6 @@
 [package]
 name = "push-byceps-stats-to-discord"
-version = "0.5.1"
+version = "0.6.0"
 authors = ["Jochen Kupperschmidt"]
 edition = "2021"
 rust-version = "1.71.1"

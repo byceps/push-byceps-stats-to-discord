@@ -1,6 +1,9 @@
 # Changelog
 
 
+## Version 0.6.0 (unreleased)
+
+
 ## Version 0.5.1 (2023-10-12)
 
 - Adjusted configuration test to changed value in exemplary
