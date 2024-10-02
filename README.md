@@ -30,7 +30,7 @@ $ push-byceps-stats-to-discord --config config.toml
 ## Docker
 
 Both a ``Dockerfile`` and a ``compose.yaml`` are included to support
-running the applicaation with Docker and Docker Compose.
+running the application with Docker and Docker Compose.
 
 Be sure to provide a configuration file named ``config.toml`` (and
 configure an interval) to avoid issues.
