@@ -3,6 +3,9 @@
 
 ## Version 0.6.0 (unreleased)
 
+- Publish Docker images for platform `linux/arm64` (in addition to
+  `linux/amd64`).
+
 
 ## Version 0.5.1 (2023-10-12)
 
