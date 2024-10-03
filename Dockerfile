@@ -1,4 +1,4 @@
-FROM rust:1.73.0 as builder
+FROM rust:1.81.0 as builder
 
 WORKDIR /usr/src/push-byceps-stats-to-discord
 
@@ -13,6 +13,6 @@ RUN cargo build --release && \
 COPY ./src ./src
 RUN cargo build --release
 
-FROM rust:1.73.0-slim-bookworm
+FROM rust:1.81.0-slim-bookworm
 COPY --from=builder /usr/src/push-byceps-stats-to-discord/target/release/push-byceps-stats-to-discord .
 CMD ["./push-byceps-stats-to-discord", "--config", "config.toml"]

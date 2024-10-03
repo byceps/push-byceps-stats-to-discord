@@ -3,6 +3,8 @@
 
 ## Version 0.6.0 (unreleased)
 
+- Updated to Rust 1.81.0.
+
 - Updated time to work on Rust 1.80.0 and later.
 
 - Publish Docker images for platform `linux/arm64` (in addition to
