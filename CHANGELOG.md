@@ -1,6 +1,9 @@
 # Changelog
 
 
+## Version 0.7.0 (unreleased)
+
+
 ## Version 0.6.0 (2024-10-03)
 
 - Updated to Rust 1.81.0.
