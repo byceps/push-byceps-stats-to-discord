@@ -15,6 +15,8 @@
 
 - Updated time to work on Rust 1.80.0 and later.
 
+- Updated toml to v0.8.19.
+
 - Publish Docker images for platform `linux/arm64` (in addition to
   `linux/amd64`).
 
