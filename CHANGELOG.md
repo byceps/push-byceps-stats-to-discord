@@ -9,6 +9,8 @@
 
 - Updated log to v0.4.22.
 
+- Updated serde_with to v3.10.0.
+
 - Updated time to work on Rust 1.80.0 and later.
 
 - Publish Docker images for platform `linux/arm64` (in addition to
