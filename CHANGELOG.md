@@ -5,6 +5,8 @@
 
 - Updated to Rust 1.81.0.
 
+- Updated clap to v4.5.19.
+
 - Updated time to work on Rust 1.80.0 and later.
 
 - Publish Docker images for platform `linux/arm64` (in addition to
