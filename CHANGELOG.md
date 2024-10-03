@@ -17,6 +17,8 @@
 
 - Updated toml to v0.8.19.
 
+- Updated ureq to v2.10.1.
+
 - Publish Docker images for platform `linux/arm64` (in addition to
   `linux/amd64`).
 
