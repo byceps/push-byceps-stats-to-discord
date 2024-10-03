@@ -17,6 +17,6 @@ clap = { version = "4.5.19", features = ["derive"] }
 log = "0.4.22"
 serde = { version = "1", features = ["derive"] }
 serde_with = "3.10.0"
-simple_logger = { version = "4.2.0", features = ["colors", "timestamps"] }
+simple_logger = { version = "5.0.0", features = ["colors", "timestamps"] }
 toml = "0.8.2"
 ureq = { version = "2.8.0", features = ["json"] }
